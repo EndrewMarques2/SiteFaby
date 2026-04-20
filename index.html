@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' https: data:; connect-src 'self' https:; frame-ancestors 'none'; base-uri 'self'; form-action 'self'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>FabiArt — Artesanato Bíblico com Fé, Personalização e Amor</title>
+  <meta name="description" content="FabiArt é uma marca de artesanato bíblico com bíblias personalizadas, presentes cristãos e atendimento rápido pelo WhatsApp.">
+  <meta name="theme-color" content="#d95d6f">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #d95d6f;
+      --dark: #2d2d2d;
+      --light: #f9f9f9;
+      --white: #ffffff;
+      --shadow: 0 4px 15px rgba(0,0,0,0.1);
+      --transition: all 0.3s ease;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Poppins', sans-serif; color: var(--dark); line-height: 1.6; background-color: var(--light); }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+    
+    /* Tipografia da Marca */
+    .brand { 
+      font-family: 'Playfair Display', serif; 
+      font-size: 2.2rem; 
+      font-weight: 900; 
+      color: var(--dark); 
+      text-decoration: none; 
+      letter-spacing: -1px;
+    }
+    .brand span { color: var(--primary); font-weight: 900; }
+    
+    /* Topbar */
+    .topbar { background: var(--primary); color: var(--white); padding: 10px 0; font-size: 0.9rem; }
+    .topbar-inner { display: flex; justify-content: space-between; align-items: center; }
+    .topbar-inner a { color: var(--white); text-decoration: none; font-weight: 600; border-bottom: 1px solid rgba(255,255,255,0.3); }
+    
+    /* Header */
+    .site-header { background: var(--white); padding: 20px 0; box-shadow: var(--shadow); position: sticky; top: 0; z-index: 100; }
+    .nav { display: flex; justify-content: space-between; align-items: center; }
+    .nav-links { display: flex; list-style: none; gap: 30px; }
+    .nav-links a { text-decoration: none; color: var(--dark); font-weight: 500; transition: var(--transition); }
+    .nav-links a:hover, .nav-links a.active { color: var(--primary); }
+    
+    /* Botões */
+    .btn { 
+      display: inline-block; 
+      padding: 12px 28px; 
+      border-radius: 50px; 
+      text-decoration: none; 
+      font-weight: 600; 
+      transition: var(--transition); 
+      cursor: pointer;
+      border: none;
+      font-family: 'Poppins', sans-serif;
+    }
+    .btn-primary { background: var(--primary); color: var(--white); }
+    .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(217, 93, 111, 0.3); }
+    .btn-light { background: var(--white); color: var(--dark); border: 1px solid #ddd; }
+    .btn-dark { background: var(--dark); color: var(--white); }
+    .btn-whatsapp { background: #25d366; color: var(--white); }
+    .btn-whatsapp:hover { background: #128c7e; transform: translateY(-3px); }
+    
+    /* Hero */
+    .hero { padding: 80px 0; background: linear-gradient(135deg, #fff 0%, #fff5f6 100%); }
+    .hero-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 60px; align-items: center; }
+    .hero-copy h1 { font-family: 'Playfair Display', serif; font-size: 3.5rem; line-height: 1.1; margin-bottom: 25px; }
+    .hero-copy p { font-size: 1.1rem; margin-bottom: 35px; color: #666; }
+    .hero-actions { display: flex; gap: 15px; margin-bottom: 40px; }
+    .floating-badges { display: flex; gap: 15px; flex-wrap: wrap; }
+    .badge { background: var(--white); padding: 8px 15px; border-radius: 50px; font-size: 0.85rem; font-weight: 600; box-shadow: var(--shadow); }
+    .hero-main-card img { width: 100%; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+    
+    /* Seções */
+    .section { padding: 100px 0; }
+    .section-title { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 20px; }
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+    .card { background: var(--white); padding: 40px; border-radius: 20px; box-shadow: var(--shadow); }
+    .eyebrow { display: block; text-transform: uppercase; font-size: 0.8rem; font-weight: 700; letter-spacing: 2px; color: var(--primary); margin-bottom: 15px; }
+    .lead { font-size: 1.1rem; margin-bottom: 25px; }
+    
+    /* Banner Personalização Simplificado */
+    .banner { 
+      background: linear-gradient(135deg, #ff8a71 0%, #f9cb28 100%); 
+      color: var(--white); 
+      padding: 60px;
+      text-align: center;
+    }
+    .banner h3 { font-family: 'Playfair Display', serif; font-size: 2.8rem; margin-bottom: 20px; }
+    .banner p { font-size: 1.2rem; margin-bottom: 40px; max-width: 700px; margin-left: auto; margin-right: auto; font-weight: 500; }
+    
+    /* Catálogo */
+    .catalog-header { margin-bottom: 50px; display: flex; justify-content: space-between; align-items: flex-end; }
+    .filter-row { display: flex; gap: 10px; }
+    .filter-btn { padding: 8px 20px; border-radius: 50px; border: 1px solid #ddd; background: transparent; cursor: pointer; font-weight: 500; transition: var(--transition); }
+    .filter-btn.active { background: var(--primary); color: var(--white); border-color: var(--primary); }
+    .products { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 30px; }
+    .product { padding: 0; overflow: hidden; border-radius: 15px; box-shadow: var(--shadow); transition: var(--transition); background: var(--white); }
+    .product:hover { transform: translateY(-8px); box-shadow: 0 12px 30px rgba(0,0,0,0.15); }
+    .product-media { position: relative; height: 350px; background: #f5f5f5; overflow: hidden; }
+    .product-media img { width: 100%; height: 100%; object-fit: cover; }
+    .product-tag { position: absolute; top: 15px; right: 15px; background: var(--primary); color: var(--white); padding: 6px 14px; border-radius: 50px; font-size: 0.75rem; font-weight: 700; }
+    .product-content { padding: 25px; }
+    .product-type { font-size: 0.75rem; font-weight: 700; color: #999; text-transform: uppercase; margin-bottom: 8px; }
+    .product-content h3 { font-size: 1.3rem; margin-bottom: 10px; color: var(--dark); }
+    .product-content p { font-size: 0.95rem; color: #666; margin-bottom: 20px; line-height: 1.5; }
+    .product-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 20px; gap: 10px; }
+    .price { font-size: 1.3rem; color: var(--primary); font-weight: 700; }
+    .product .btn { padding: 10px 20px; font-size: 0.9rem; }
+    
+    /* Footer */
+    .footer { background: var(--dark); color: var(--white); padding: 80px 0 40px; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 60px; margin-bottom: 60px; }
+    .footer h4 { margin-bottom: 25px; font-size: 1.1rem; }
+    .footer ul { list-style: none; }
+    .footer ul li { margin-bottom: 12px; }
+    .footer ul a { color: #ccc; text-decoration: none; transition: var(--transition); }
+    .footer ul a:hover { color: var(--white); }
+    .footer-bottom { border-top: 1px solid #444; padding-top: 30px; display: flex; justify-content: space-between; font-size: 0.85rem; color: #888; }
+    
+    /* Reveal Animation */
+    .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    
+    .skip-link { position: absolute; left: -10000px; top: auto; width: 1px; height: 1px; overflow: hidden; }
+    .menu-toggle { display: none; background: none; border: none; font-size: 1.5rem; cursor: pointer; }
+    .empty-state { display: none; text-align: center; padding: 40px; font-size: 1.1rem; color: #999; }
+
+    @media (max-width: 992px) {
+      .hero-grid { grid-template-columns: 1fr; text-align: center; }
+      .hero-copy h1 { font-size: 2.8rem; }
+      .hero-actions { justify-content: center; }
+      .floating-badges { justify-content: center; }
+      .grid-2 { grid-template-columns: 1fr; }
+      .catalog-header { flex-direction: column; align-items: flex-start; gap: 20px; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .products { grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); }
+    }
+  </style>
+</head>
+<body>
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+<div class="topbar">
+  <div class="container topbar-inner">
+    <span>✨ Atendimento com carinho, fé e personalização especial</span>
+    <a href="https://wa.me/5511999999999?text=Ol%C3%A1%21%20Vi%20o%20site%20da%20FabiArt%20e%20quero%20mais%20informa%C3%A7%C3%B5es." target="_blank" rel="noopener noreferrer">Falar no WhatsApp</a>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="index.html">Fabi<span>Art</span></a>
+    <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false">☰</button>
+    <ul class="nav-links">
+      <li><a class="active" href="index.html">Início</a></li>
+      <li><a href="sobre.html">Sobre</a></li>
+      <li><a href="#catalogo">Catálogo</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a class="btn btn-whatsapp" href="https://wa.me/5511999999999?text=Ol%C3%A1%21%20Quero%20atendimento%20sobre%20os%20produtos%20da%20FabiArt." target="_blank" rel="noopener noreferrer">Chamar no WhatsApp</a>
+    </div>
+  </div>
+</header>
+
+<main id="conteudo">
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-copy reveal">
+        <span class="hero-kicker">Artesanato bíblico premium</span>
+        <h1>Peças feitas à mão com <em>fé</em>, beleza e carinho em cada detalhe.</h1>
+        <p>Criamos bíblias personalizadas, presentes cristãos e itens artesanais com identidade delicada, acabamento especial e atendimento próximo pelo WhatsApp.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#catalogo">Explorar catálogo</a>
+          <a class="btn btn-whatsapp" href="https://wa.me/5511999999999?text=Ol%C3%A1%21%20Quero%20encomendar%20uma%20B%C3%ADblia%20personalizada." target="_blank" rel="noopener noreferrer">Pedir no WhatsApp</a>
+        </div>
+        <div class="floating-badges">
+          <div class="badge">💗 Feito à mão</div>
+          <div class="badge">✨ Personalização exclusiva</div>
+          <div class="badge">📦 Envio para todo o Brasil</div>
+        </div>
+      </div>
+      <div class="hero-cards reveal">
+        <div class="hero-card hero-main-card">
+          <img src="assets/biblias/nvi_luxo.png" alt="Peças artesanais cristãs - Bíblia NVI Luxo">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container grid-2">
+      <div class="card about-card reveal">
+        <span class="eyebrow">Resumo da marca</span>
+        <h2 class="section-title">Uma marca criada para unir <span style="color:var(--primary)">arte</span>, propósito e Palavra.</h2>
+        <p class="lead">A FabiArt nasceu para transformar presentes em memórias especiais. Cada peça carrega cuidado, beleza, delicadeza e uma mensagem de fé. Criamos produtos para uso pessoal, presentes de casamento, batismo, aniversário e momentos marcantes da vida cristã.</p>
+        <div class="hero-actions"><a class="btn btn-dark" href="sobre.html">Ver página Sobre Nós</a><a class="btn btn-light" href="#contato">Ver contatos</a></div>
+      </div>
+      <div class="card about-card reveal">
+        <span class="eyebrow">Destaques</span>
+        <h2 class="section-title">Mais clareza, confiança e conversão para o seu site.</h2>
+        <p class="lead">O visual foi atualizado com tipografia mais moderna, cores mais vivas, botões estratégicos, menu mobile, estrutura mais profissional e um botão de WhatsApp direto para facilitar pedidos e atendimento.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="catalogo" class="section">
+    <div class="container">
+      <div class="catalog-header reveal">
+        <div>
+          <span class="eyebrow">Catálogo</span>
+          <h2 class="section-title">Produtos com visual mais forte e chamada para ação mais clara.</h2>
+        </div>
+        <div class="filter-row">
+          <button class="filter-btn active" data-filter="todos">Todos</button>
+          <button class="filter-btn" data-filter="nvi">NVI</button>
+          <button class="filter-btn" data-filter="ara">ARA</button>
+          <button class="filter-btn" data-filter="personalizada">Personalizadas</button>
+          <button class="filter-btn" data-filter="especial">Especiais</button>
+        </div>
+      </div>
+      <div class="products">
+        <!-- Categoria 1: NVI Luxo -->
+        <article class="card product reveal" data-tipo="nvi">
+          <div class="product-media">
+            <img src="assets/biblias/nvi_luxo.png" alt="Bíblia NVI Luxo - Capa Preta">
+            <span class="product-tag">Premium</span>
+          </div>
+          <div class="product-content">
+            <div class="product-type">Bíblia NVI</div>
+            <h3>Bíblia NVI Luxo</h3>
+            <p>Capa em couro soft premium, letra grande confortável e acabamento elegante para estudo diário.</p>
+            <div class="product-footer">
+              <strong class="price">R$ 129,90</strong>
+              <a class="btn btn-primary" href="https://wa.me/5511999999999?text=Tenho%20interesse%20na%20B%C3%ADblia%20NVI%20Luxo." target="_blank" rel="noopener noreferrer">Comprar</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Categoria 1: NVI Branca -->
+        <article class="card product reveal" data-tipo="nvi">
+          <div class="product-media">
+            <img src="assets/biblias/nvi_branca.jpg" alt="Bíblia NVI Branca - Capa Luxo">
+            <span class="product-tag">Novo</span>
+          </div>
+          <div class="product-content">
+            <div class="product-type">Bíblia NVI</div>
+            <h3>Bíblia NVI Branca</h3>
+            <p>Capa luxo branca, perfeita para presentes especiais e casamentos. Acabamento refinado e elegante.</p>
+            <div class="product-footer">
+              <strong class="price">R$ 139,90</strong>
+              <a class="btn btn-primary" href="https://wa.me/5511999999999?text=Quero%20a%20B%C3%ADblia%20NVI%20Branca." target="_blank" rel="noopener noreferrer">Comprar</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Categoria 1: NVI Slim Marrom -->
+        <article class="card product reveal" data-tipo="nvi">
+          <div class="product-media">
+            <img src="assets/biblias/slim_marrom.jpg" alt="Bíblia NVI Slim - Capa Marrom">
+            <span class="product-tag">Portátil</span>
+          </div>
+          <div class="product-content">
+            <div class="product-type">Bíblia NVI</div>
+            <h3>Bíblia NVI Slim Marrom</h3>
+            <p>Versão slim e portátil, ideal para levar a qualquer lugar. Capa marrom em couro soft de qualidade.</p>
+            <div class="product-footer">
+              <strong class="price">R$ 99,90</strong>
+              <a class="btn btn-primary" href="https://wa.me/5511999999999?text=Quero%20a%20B%C3%ADblia%20NVI%20Slim%20Marrom." target="_blank" rel="noopener noreferrer">Comprar</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Categoria 2: ARA Preta -->
+        <article class="card product reveal" data-tipo="ara">
+          <div class="product-media">
+            <img src="assets/biblias/ara_preta.png" alt="Bíblia ARA Preta - Clássica">
+            <span class="product-tag">Clássica</span>
+          </div>
+          <div class="product-content">
+            <div class="product-type">Bíblia ARA</div>
+            <h3>Bíblia ARA Preta</h3>
+            <p>Visual sóbrio e clássico, ótima durabilidade e material confortável para manuseio constante.</p>
+            <div class="product-footer">
+              <strong class="price">R$ 89,90</strong>
+              <a class="btn btn-primary" href="https://wa.me/5511999999999?text=Quero%20a%20B%C3%ADblia%20ARA%20Preta." target="_blank" rel="noopener noreferrer">Comprar</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Categoria 2: ARA Clássica -->
+        <article class="card product reveal" data-tipo="ara">
+          <div class="product-media">
+            <img src="assets/biblias/ara_classica.jpg" alt="Bíblia ARA Clássica - Capa Preta">
+            <span class="product-tag">Tradicional</span>
+          </div>
+          <div class="product-content">
+            <div class="product-type">Bíblia ARA</div>
+            <h3>Bíblia ARA Clássica</h3>
+            <p>Tradução clássica e confiável. Capa em couro com detalhes dourados. Perfeita para estudo bíblico.</p>
+            <div class="product-footer">
+              <strong class="price">R$ 109,90</strong>
+              <a class="btn btn-primary" href="https://wa.me/5511999999999?text=Quero%20a%20B%C3%ADblia%20ARA%20Cl%C3%A1ssica." target="_blank" rel="noopener noreferrer">Comprar</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Categoria 2: ARA Luxo Marrom -->
+        <article class="card product reveal" data-tipo="ara">
+          <div class="product-media">
+            <img src="assets/biblias/luxo_marrom.jpg" alt="Bíblia ARA Luxo - Capa Marrom">
+            <span class="product-tag">Premium</span>
+          </div>
+          <div class="product-content">
+            <div class="product-type">Bíblia ARA</div>
+            <h3>Bíblia ARA Luxo Marrom</h3>
+            <p>Edição premium com capa em couro marrom, acabamento refinado e letras grandes para fácil leitura.</p>
+            <div class="product-footer">
+              <strong class="price">R$ 149,90</strong>
+              <a class="btn btn-primary" href="https://wa.me/5511999999999?text=Quero%20a%20B%C3%ADblia%20ARA%20Luxo%20Marrom." target="_blank" rel="noopener noreferrer">Comprar</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Categoria 3: Personalizada -->
+        <article class="card product reveal" data-tipo="personalizada">
+          <div class="product-media">
+            <img src="assets/biblias/personalizada.jpg" alt="Bíblia Personalizada - Com Nome">
+            <span class="product-tag">Personalizada</span>
+          </div>
+          <div class="product-content">
+            <div class="product-type">Artesanal</div>
+            <h3>Bíblia Personalizada</h3>
+            <p>Personalização com nome, versículo especial e cor da capa. Cada peça é única e feita à mão.</p>
+            <div class="product-footer">
+              <strong class="price">R$ 189,90</strong>
+              <a class="btn btn-primary" href="https://wa.me/5511999999999?text=Quero%20personalizar%20uma%20B%C3%ADblia%20com%20nome." target="_blank" rel="noopener noreferrer">Personalizar</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Categoria 4: Floral Especial -->
+        <article class="card product reveal" data-tipo="especial">
+          <div class="product-media">
+            <img src="assets/biblias/floral.jpg" alt="Bíblia Floral - Edição Especial">
+            <span class="product-tag">Edição Limitada</span>
+          </div>
+          <div class="product-content">
+            <div class="product-type">Especial</div>
+            <h3>Bíblia Floral Delicada</h3>
+            <p>Acabamento floral delicado com proposta premium. Ideal para presentes especiais e momentos marcantes.</p>
+            <div class="product-footer">
+              <strong class="price">R$ 199,90</strong>
+              <a class="btn btn-primary" href="https://wa.me/5511999999999?text=Quero%20a%20B%C3%ADblia%20Floral%20Delicada." target="_blank" rel="noopener noreferrer">Comprar</a>
+            </div>
+          </div>
+        </article>
+      </div>
+      <div class="empty-state">Nenhum produto encontrado nessa categoria.</div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="card banner reveal">
+        <div class="banner-grid">
+          <div>
+            <span class="eyebrow" style="color:#fff">Personalização</span>
+            <h3>A Bíblia perfeita, com a identidade da pessoa que vai receber.</h3>
+            <p>Escolha nome, capa, dedicatória, detalhes e estilo visual.</p>
+            <div class="hero-actions" style="justify-content: center;">
+              <a class="btn btn-light" href="https://wa.me/5511999999999?text=Ol%C3%A1%21%20Quero%20consultar%20hor%C3%A1rio%20e%20detalhes%20de%20personaliza%C3%A7%C3%A3o." target="_blank" rel="noopener noreferrer">Chamar no WhatsApp para Personalizar</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contato" class="section">
+    <div class="container contact-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px;">
+      <div class="card about-card reveal">
+        <span class="eyebrow">Contato</span>
+        <h2 class="section-title">Atendimento rápido e pronto para vender.</h2>
+        <p class="lead">Aqui você pode colocar seus canais oficiais e transformar visitas em pedidos. O mais importante é trocar o número fictício pelo seu número real do WhatsApp.</p>
+        <div class="contact-list">
+          <div class="card contact-item" style="padding: 20px; margin-bottom: 10px; background: #f9f9f9;">
+            <strong>WhatsApp</strong>
+            <span>(11) 99999-9999</span>
+          </div>
+          <div class="card contact-item" style="padding: 20px; background: #f9f9f9;">
+            <strong>Instagram</strong>
+            <span>@fabiart</span>
+          </div>
+        </div>
+      </div>
+      <div class="card about-card reveal">
+        <span class="eyebrow">Ação rápida</span>
+        <h2 class="section-title">Botão que já abre conversa no WhatsApp.</h2>
+        <p class="lead">Esse botão já está configurado com mensagem pronta. Depois você só precisa trocar o número.</p>
+        <div class="hero-actions">
+          <a class="btn btn-whatsapp" href="https://wa.me/5511999999999?text=Ol%C3%A1%21%20Gostaria%20de%20fazer%20um%20pedido%20na%20FabiArt." target="_blank" rel="noopener noreferrer">Abrir conversa no WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a class="brand" href="index.html" style="color:#fff">Fabi<span>Art</span></a>
+        <p>Artesanato bíblico feito com amor, fé e acabamento especial para presentear e marcar momentos importantes.</p>
+      </div>
+      <div>
+        <h4>Navegação</h4>
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="sobre.html">Sobre Nós</a></li>
+          <li><a href="#catalogo">Catálogo</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contato</h4>
+        <ul>
+          <li><a href="https://wa.me/5511999999999" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">E-mail</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 FabiArt — Todos os direitos reservados.</span>
+      <span>Feito com fé, estratégia e design.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
